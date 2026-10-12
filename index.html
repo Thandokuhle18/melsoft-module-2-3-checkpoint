@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 10</title>
+</head>
+<body>
+
+<script>
+    window.alert("Welcome to our membership system!");
+
+    const nameInput = window.prompt("What is your name?");
+    let name = nameInput;
+
+    if (name === null || name === "") {
+        name = "Guest";
+    }
+
+    const ageInput = window.prompt("What is your age?");
+    const age = Number(ageInput);
+
+    if (isNaN(age) || age < 1 || age > 120) {
+        window.alert("Please enter a valid age between 1 and 120.");
+    } else {
+        const tier = age < 18 ? "Youth" : age < 60 ? "Adult" : "Senior";
+
+        const newsletter = window.confirm(
+            "Do you want to subscribe to our newsletter?"
+        );
+
+        window.alert(
+            "Name: " + name +
+            "\nAge: " + age +
+            "\nMembership: " + tier +
+            "\nNewsletter: " + newsletter
+        );
+    }
+</script>
+
+</body>
+</html>
